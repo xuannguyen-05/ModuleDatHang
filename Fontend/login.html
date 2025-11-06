@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Đăng Nhập</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="modal" style="position: relative; display: flex">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+          <div class="auth-form">
+            <div class="auth-form__container">
+              <div class="auth-form__header">
+                <h3 class="auth-form__heading">Đăng Nhập</h3>
+                <a href="./register.html" class="auth-form__switch-btn"
+                  >Đăng Ký</a
+                >
+              </div>
+
+              <div class="auth-form__form">
+                <div class="auth-form__group">
+                  <input
+                    id="login-username"
+                    type="text"
+                    class="auth-form__input"
+                    placeholder="Tên đăng nhập"
+                  />
+                </div>
+                <div class="auth-form__group">
+                  <input
+                    id="login-password"
+                    type="password"
+                    class="auth-form__input"
+                    placeholder="Nhập mật khẩu"
+                  />
+                </div>
+              </div>
+
+              <div class="auth-form__aside"></div>
+
+              <div class="auth-form__controls">
+                <button class="btn auth-form__controls-back btn--normal">
+                  TRỞ LẠI
+                </button>
+                <button
+                  id="login-button"
+                  type="button"
+                  class="btn btn--primary"
+                >
+                  ĐĂNG NHẬP
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 1. Định nghĩa địa chỉ "Nhà bếp" (Backend của bạn)
+      // !! QUAN TRỌNG: Bạn phải đổi IP này thành IP mạng LAN của máy bạn
+      // ví dụ: 'http://192.168.1.10:8000'
+      const API_BASE_URL = "http://127.0.0.1:8000/api";
+
+      // 2. Chờ trang web tải xong
+      document.addEventListener("DOMContentLoaded", function () {
+        // 3. Tìm các nút và ô input
+        const loginButton = document.getElementById("login-button");
+        const usernameInput = document.getElementById("login-username");
+        const passwordInput = document.getElementById("login-password");
+
+        // 4. Khi người dùng bấm nút "ĐĂNG NHẬP"
+        loginButton.addEventListener("click", async function () {
+          const username = usernameInput.value;
+          const password = passwordInput.value;
+
+          // 5. Kiểm tra sơ (không để trống)
+          if (!username || !password) {
+            alert("Vui lòng nhập cả Tên đăng nhập và Mật khẩu.");
+            return;
+          }
+
+          try {
+            // 6. GỌI VÀO API BACKEND CỦA BẠN
+            const response = await fetch(`${API_BASE_URL}/auth/login`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify({
+                username: username,
+                password: password,
+              }),
+            });
+
+            const data = await response.json();
+
+            // 7. Xử lý kết quả
+            if (response.ok) {
+              // Nếu BE trả về 'token' (thành công 200)
+              alert("Đăng nhập thành công!");
+
+              // LƯU "VÉ" (TOKEN) VÀO TRÌNH DUYỆT
+              localStorage.setItem("user_token", data.token);
+
+              // Chuyển họ về trang chủ (index.html)
+              window.location.href = "./index.html";
+            } else {
+              // Nếu BE trả về lỗi (422, 401...)
+              // Hiển thị lỗi mà API của bạn đã trả về
+              alert(
+                "Đăng nhập thất bại: " + (data.message || data.username[0])
+              );
+            }
+          } catch (error) {
+            // Lỗi này xảy ra nếu BE bị sập, hoặc lỗi CORS
+            console.error("Lỗi không gọi được API:", error);
+            alert("Không thể kết nối tới máy chủ (Có thể do lỗi CORS).");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>Đăng Ký</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="modal" style="position: relative; display: flex">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+          <div class="auth-form">
+            <div class="auth-form__container">
+              <div class="auth-form__header">
+                <h3 class="auth-form__heading">Đăng Ký</h3>
+                <a href="./login.html" class="auth-form__switch-btn"
+                  >Đăng Nhập</a
+                >
+              </div>
+
+              <div class="auth-form__form">
+                <div class="auth-form__group">
+                  <input
+                    id="reg-username"
+                    type="text"
+                    class="auth-form__input"
+                    placeholder="Tên đăng nhập (username)"
+                  />
+                </div>
+                <div class="auth-form__group">
+                  <input
+                    id="reg-fullname"
+                    type="text"
+                    class="auth-form__input"
+                    placeholder="Họ và Tên (FullName)"
+                  />
+                </div>
+                <div class="auth-form__group">
+                  <input
+                    id="reg-email"
+                    type="text"
+                    class="auth-form__input"
+                    placeholder="Email của bạn"
+                  />
+                </div>
+                <div class="auth-form__group">
+                  <input
+                    id="reg-password"
+                    type="password"
+                    class="auth-form__input"
+                    placeholder="Nhập mật khẩu"
+                  />
+                </div>
+              </div>
+
+              <div class="auth-form__aside"></div>
+
+              <div class="auth-form__controls">
+                <button class="btn auth-form__controls-back btn--normal">
+                  TRỞ LẠI
+                </button>
+                <button
+                  id="register-button"
+                  type="button"
+                  class="btn btn--primary"
+                >
+                  ĐĂNG KÝ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 1. Định nghĩa địa chỉ BE
+      const API_BASE_URL = "http://127.0.0.1:8000/api";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const registerButton = document.getElementById("register-button");
+
+        registerButton.addEventListener("click", async function () {
+          // 2. Lấy dữ liệu từ các ô
+          const username = document.getElementById("reg-username").value;
+          const fullname = document.getElementById("reg-fullname").value;
+          const email = document.getElementById("reg-email").value;
+          const password = document.getElementById("reg-password").value;
+
+          try {
+            // 3. GỌI API REGISTER CỦA BẠN
+            const response = await fetch(`${API_BASE_URL}/auth/register`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify({
+                Username: username,
+                FullName: fullname,
+                Email: email,
+                PasswordHash: password, // API của bạn đang nhận PasswordHash
+              }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+              alert("Đăng ký thành công! Vui lòng đăng nhập.");
+              window.location.href = "./login.html"; // Chuyển về trang login
+            } else {
+              // Báo lỗi chi tiết từ BE (ví dụ: "Email đã tồn tại")
+              let errorMessage = data.message;
+              if (data.errors) {
+                if (data.errors.Username)
+                  errorMessage = data.errors.Username[0];
+                if (data.errors.Email) errorMessage = data.errors.Email[0];
+              }
+              alert("Đăng ký thất bại: " + errorMessage);
+            }
+          } catch (error) {
+            console.error("Lỗi không gọi được API:", error);
+            alert("Không thể kết nối tới máy chủ (Có thể do lỗi CORS).");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

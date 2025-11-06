@@ -1,0 +1,29 @@
+# ---------------------------------
+# Cấu hình chung
+# ---------------------------------
+.DS_Store
+.vscode/
+
+# ---------------------------------
+# Cấu hình BACKEND (Laravel)
+# ---------------------------------
+
+# Bỏ qua file bí mật (Chứa mật khẩu DB)
+/backend/.env
+
+# Bỏ qua thư viện (Rất nặng, người khác sẽ tự chạy 'composer install')
+/backend/vendor/
+
+# Bỏ qua các file log và cache
+/backend/storage/logs/*.log
+/backend/storage/framework/cache/
+/backend/storage/framework/sessions/
+/backend/storage/framework/views/
+/backend/bootstrap/cache/config.php
+
+# ---------------------------------
+# Cấu hình FRONTEND
+# ---------------------------------
+
+# Bỏ qua thư viện (Nếu sau này bạn của bạn dùng 'npm install')
+/frontend/node_modules/
