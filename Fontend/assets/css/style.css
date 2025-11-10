@@ -1,0 +1,154 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modal-container {
+  background: white;
+  padding: 24px 28px;
+  width: 420px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.sub {
+  font-size: 13px;
+  color: #777;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.map-box {
+  border: 1px solid #eee;
+  height: 120px;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.btn-add-location {
+  border: 1px solid #ddd;
+  background: white;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.address-type {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.type-btn {
+  border: 1px solid #ddd;
+  background: white;
+  padding: 8px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.type-btn.active,
+.type-btn:hover {
+  border-color: #598bbb;
+  color: #598bbb;
+}
+
+.form-footer {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn-cancel {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px;
+}
+.btn-cancel:hover{
+    background-color: #d0cbcb;
+}
+.btn-submit {
+  background: #2C3E50;
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-submit:hover {
+  background: #598bbb;
+}
+
+
+.orderSuccessfullyform{
+    width: 60%;
+
+}
+
+.orderSuccessfully{
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #53c303;
+    padding-bottom: 20px;
+
+}
+
+
+
+.orderSuccessfullyDicripsion{
+    font-size: 1.2rem;
+    color: #333;
+    padding-bottom: 20px;
+    display: flex;
+    line-height: 1.7rem;
+
+}
+.orderSuccessfullyBTN{
+    justify-content: center;
+}
+
+.type-btnBTN{
+    padding: 15px 30px;
+}

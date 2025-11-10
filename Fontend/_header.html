@@ -1,0 +1,355 @@
+ <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separete">
+                            Liên hệ với đội ngũ của chúng Tôi
+                            <div class="header__qr">
+                                <img src="./assets/img/maqr.png" alt="QR code" class="header__qr-img">
+                                <div class="header__qr-apps">
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/apstore.png" alt="Google Play" class="header__qr-download-img">
+                                    </a>
+
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/google.png" alt="App Store" class="header__qr-download-img">
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-title--no-pointer">Kết nối</span>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class=" Header__navbar-icon fa-brands fa-facebook"></i>
+                            </a>
+
+                            <a href="" class="header__navbar-icon-link">
+                                <i class=" Header__navbar-icon fa-brands fa-instagram"></i>
+                            </a>
+                    
+                        </li>
+                    </ul>
+    
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-notify">
+                            <!-- vì khi trỏ vào thông báo sẽ xuất hiện link nên đưa vào thẻ a -->
+                            <a href="" class="header__navbar-item-link">
+                                <i class=" Header__navbar-icon far fa-bell"></i>
+                                Thông báo
+                            </a>
+                            <div class="header__notify ">
+                                <header class="header__notify--header">
+                                    <h3>Thông Báo Mới Nhận</h3>
+                                </header>
+                                <ul class="header__notify--list">
+                                    <li class="header__notify--item">
+                                        <a href="" class="header__notify--link">
+                                            <img src="/assets/img/sandan1.jpg" alt="" class="header__notify--img">
+                                            <div class="header__notify--info">
+                                                <span class="header__notify--name">Sandal Nữ Thể Thao Tiện Lợi AG0329 </span>
+                                                <span class="header__notify--descriotion">Với chất liệu da cao cấp, siêu êm mềm</span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="header__notify--item">
+                                        <a href="" class="header__notify--link">
+                                            <img src="/assets/img/sandanNui.jpg" alt="" class="header__notify--img">
+                                            <div class="header__notify--info">
+                                                <span class="header__notify--name">Sale Giày Sandal lội suối đi dã ngoại Humtto Da SALE OFF 70% </span>
+                                                <span class="header__notify--descriotion">Giá chỉ còn 375.000 (giá gốc: 1.250.000vnd). </span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="header__notify--item">
+                                        <a href="" class="header__notify--link header__notify--link--viewed">
+                                            <img src="/assets/img/giaythethao1.jpg" alt="" class="header__notify--img">
+                                            <div class="header__notify--info">
+                                                <span class="header__notify--name">RUNF chính thức ra mắt dòng sản phẩm Giày thể thao siêu nhẹ RUNF </span>
+                                                <span class="header__notify--descriotion"> Fabric kết hợp da cao cấp bền bỉ chắc chắn, đế cao su nguyên khối, gờ nổi tăng ma sát, chống trơn trượt, giày đi bộ thoải mái</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <footer class="header__notify-footer"> <!-- thẻ cuối cùng trong phầN thông báo -->
+                                    <a href="" class="header__notify-footer--btn">Xem tất cả</a>
+
+                                </footer>
+
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class=" Header__navbar-icon fa-solid fa-handshake-angle"></i>
+                                Trợ giúp
+                            </a>
+                        </li>
+                        <li id="guest-register-link" class="header__navbar-item header__navbar-item-bold header__navbar-item--separete">
+                            <a href="#" style="text-decoration: none; color: inherit;">Đăng kí</a>
+                        </li>
+                        <li id="guest-login-link" class="header__navbar-item header__navbar-item-bold">
+                            <a href="#" style="text-decoration: none; color: inherit;">Đăng nhập</a>
+                        </li>
+                        <li id="user-menu" class="header__navbar-item header__navbar-user">
+                            <img src="./assets/img/avata.jpg" alt="" class="header__navbar-user-img">
+                            <span class="header__navbar-user-name">Xuân Tấn</span>
+
+                            <ul class="header__navbar-user-menu">
+                                <li class="header__navbar-user-menu-item">
+                                    <a href="pages/my-profile.html">Tài khoản của tôi</a>
+                                </li>
+                                <li class="header__navbar-user-menu-item">
+                                    <a href="">Địa chỉ của tôi</a>
+                                </li>
+                                <li class="header__navbar-user-menu-item">
+                                    <a href="pages/my-orders.html">Đơn mua</a>
+                                </li>
+                                <li class="header__navbar-user-menu-item header__navbar-user-menu-item--separate">
+                                    <a href="#" id="logout-button">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </nav>
+
+                <!-- header with search -->
+                <div class="header-with-search">
+                    <div class="header__logo">
+                        <a href="/" class="header__logo-link"><!-- href="/" tự trở về trang chủ -->
+                           
+                            <img src="/assets/img/logo-removebg-preview.png" alt="" class="logo_ShopGiay">
+                        </a>
+                    </div>
+
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input" placeholder="Nhập để Tìm kiếm Sản Phẩm">
+                            <!-- tạo lịch sử tìm kiếm thu nhỏ theo giao diên web -->
+                            <div class="header__search-history">
+                                <h3 class="header__search-history-heading">Lịch Sử Tìm Kiếm</h3>
+                                <ul class="header__search-history-list">
+                                    <li class="header__search-history-item">
+                                        <a href="">Giày thể thao nam</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="">Giày Sneaker</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="">Dép sandnds nam nữ</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                        <div class="header__search-select">
+                            <span class="header__search-select-lable">Trong shop</span>
+                            <i class="header__search-select-icon fa-solid fa-chevron-down"></i>
+
+                            <ul class="header__search-option">
+                                <li class="header__search-option-item header__search-option-item--active">
+                                    <span>Trong Shop</span>
+                                    <i class="fa-solid fa-check"></i>
+                                </li>
+
+                                <li class="header__search-option-item">
+                                    <span>Ngoài Shop</span>
+                                   <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="header__search-btn">
+                            <i class=" header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                        </button>
+
+                    </div>
+
+                    <!-- cart layout -->
+                    <div class="header__cart">
+                        <!-- taọ thẻ header__cart-warp để giới hạn phạm vi ảnh
+                         hưởng chỉ khi rê chuột vào icon mới hiện lên -->
+                        <div class="header__cart-warp">
+                            <i class="header__cart-icon fa fa-shopping-cart" aria-hidden="true"></i>
+                            <span class="header__cart-notice">8</span>
+    
+                            <!-- no cart:header__cart-list--no-cart -->
+                            <div class="header__cart-list ">
+                                <img src="./assets/img/no_cart.png" alt="" class="header__cart-no-cart-img">
+                                <span class="header__cart-list--no-cart-msg">Chưa có sản phẩm</span>
+
+                                <h4 class="header__cart-heading">Sản Phẩm Đã Thêm</h4>
+                                <ul class="header__cart-list-item">
+                                    <!-- cart item -->
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/giaydabanh.jpg" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Giày đá bóng cỏ nhân tạo adidas F50 Pro TF Coral Blaze - Beam Orange/Lucid Blue/Footwear White JH7664</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">550.000</span>
+                                                    <span class="header__cart-item-toantu">x</span>
+                                                    <span class="header__cart-item-soluong">2</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-decriptions">Phân loại : 42, Màu cam</span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/giaydabanh2.jpg" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Giày bóng đá Nam YSTU013-3V</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">1.350.000</span>
+                                                    <span class="header__cart-item-toantu">x</span>
+                                                    <span class="header__cart-item-soluong">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-decriptions">Phân loại : 46, Vàng</span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/giaydabanh3.jpg" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">GIÀY ĐÁ BÓNG CAO CẤP TN350 SÂN CỎ TỰ NHIÊN MÀU VÀNG</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">350.000</span>
+                                                    <span class="header__cart-item-toantu">x</span>
+                                                    <span class="header__cart-item-soluong">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-decriptions">Phân loại : 42, Màu Vàng</span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/giaynike.jpg" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Nike Mercurial Vapor 15 Pro</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">850.000</span>
+                                                    <span class="header__cart-item-toantu">x</span>
+                                                    <span class="header__cart-item-soluong">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-decriptions">Phân loại : 46, Màu trắng</span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/giaydabanh.jpg" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Giày đá bóng cỏ nhân tạo adidas F50 Pro TF Coral Blaze - Beam Orange/Lucid Blue/Footwear White JH7664</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">550.000</span>
+                                                    <span class="header__cart-item-toantu">x</span>
+                                                    <span class="header__cart-item-soluong">2</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-decriptions">Phân loại : 42, Màu cam</span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/giaydabanh2.jpg" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Giày bóng đá Nam YSTU013-3V</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">1.350.000</span>
+                                                    <span class="header__cart-item-toantu">x</span>
+                                                    <span class="header__cart-item-soluong">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-decriptions">Phân loại : 46, Vàng</span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/giaydabanh.jpg" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Giày đá bóng cỏ nhân tạo adidas F50 Pro TF Coral Blaze - Beam Orange/Lucid Blue/Footwear White JH7664</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">550.000</span>
+                                                    <span class="header__cart-item-toantu">x</span>
+                                                    <span class="header__cart-item-soluong">2</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-decriptions">Phân loại : 42, Màu cam</span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/giaydabanh2.jpg" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Giày bóng đá Nam YSTU013-3V</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">1.350.000</span>
+                                                    <span class="header__cart-item-toantu">x</span>
+                                                    <span class="header__cart-item-soluong">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-decriptions">Phân loại : 46, Vàng</span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+
+                                </ul>
+
+                                <a href="cart.html" class="header__cart-view-cart btn btn--primary">Xem giỏ hàng</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </header>

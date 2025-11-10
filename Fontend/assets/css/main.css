@@ -411,7 +411,7 @@ nên sử lí bằng việc tạo 1 cầu nối */
 
 }
 .auth-form__container {
-    padding: 0 32px;
+    padding: 20px 32px;
 
 }
 
@@ -1574,4 +1574,653 @@ i.home-product-item__like-icon-fill {
 }
 .productDeatil_by_btnnew:hover{
     opacity: 0.9;
+}
+
+/* cart delail */
+.cartDetailTitle{
+    font-size: 2.2rem;
+    text-align: center;
+    padding: 25px;
+
+}
+.cartDetailName{
+    color: var(--primary-color);
+
+}
+.cartDetailTitleIcon{
+    color: var(--primary-color);
+}
+.cartDetailProduct_img{
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    height: 100px;
+    object-fit: cover;
+    width: 100px;
+}
+
+.cartDetail{
+    display: flex;
+    padding: 40px 20px;
+    background-color: var(--white-color);
+    height: 130px;
+    width: 100%;
+    
+
+}
+
+.cartDetailProduct{
+    display: flex;
+    width: 30%;
+
+}
+.cartDetail_content{
+    width: 70%;
+    display: flex;
+
+}
+.cartDetail_content5{
+    width: 20%;
+}
+
+.cartDetailProductName{
+    /* width: 264px; */
+    padding-left: 10px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--text-color);
+}
+
+.cartDetail_PhanLoai{
+    font-size: 1.4rem;
+    color: #828482;
+    padding-left: 15px;
+}
+
+.cartDetail_PhanLoaiName{
+    display: block;
+
+}
+
+.cartDetail_PhanLoaiMota{
+
+}
+
+.cartDetail_price{
+    font-size: 1.6rem;
+    color: var(--primary-color);
+
+}
+
+.cartDetail_quantity{
+
+}
+
+.productDeatil_QuantityInt{
+
+}
+
+.cartDetail_sumprice{
+    font-size: 1.6rem;
+    color: #598bbb;
+
+}
+
+.cartDetaiProductDelete{
+    
+
+}
+
+.cartDetaiProductDelete_btn{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.cartDetaiProductDelete_btn:hover{
+    color: #598bbb;
+}
+
+.cartDetailTitleName{
+    display: flex;
+    font-size: 1.6rem;
+    height: 50px;
+    background-color: var(--white-color);
+    padding: 0 20px;
+    margin: 25px 0;
+    align-items: center;
+    font-weight: 500;
+    color: #8f8c88;
+}
+.cartDetailProduct1{
+    padding-left: 10px;
+    color: var(--text-color);
+}
+
+.cartDetailend{
+    display: flex;
+    font-size: 1.6rem;
+    height: 70px;
+    background-color: var(--white-color);
+    padding: 0 20px;
+    margin-top: 25px ;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+
+}
+
+.cartDetailend_MuaHang{
+
+}
+
+.cartDetailend_MuaHang_quantity{
+
+}
+
+.cartDetailend_MuaHangPrice{
+    font-size: 1.8rem;
+    color: #598bbb;
+    padding-left: 3px;
+
+}
+
+.cartDetailend_MuaHangBtn{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    margin-left: 20px;
+    padding: 20px;
+}
+.cartDetailend_MuaHangBtn:hover{
+    background-color: #598bbb;
+}
+
+/* start pay bill */
+
+.payBill_title{
+    height: 50px;
+    background-color: var(--white-color);
+    display: flex;
+}
+
+.payBill_titleName{
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    padding-left: 65px;
+    padding-top: 20px;
+
+}
+
+.payBill_address{
+    display: block;
+    margin: 15px 40px;
+    height: 115px;
+    background-color: var(--white-color);
+
+}
+
+.payBill_addressTitle{
+    font-size: 2rem;
+    padding: 20px;
+    color: var(--primary-color);
+
+}
+
+.payBill_addressTitle_icon{
+
+}
+
+.payBill_addressTitle_name{
+
+}
+
+.payBill_address_content{
+    font-size: 1.6rem;
+    padding: 0 20px 25px 24px;
+
+}
+
+.payBill_address_contentName{
+    font-weight: 500;
+
+}
+
+.payBill_address_contentPhone{
+    font-weight: 500;
+
+}
+
+.payBill_address_contentAddress{
+    padding: 0 20px;
+    color: var(--text-color);
+
+}
+
+.payBill_address_contentbutton{
+    height: 20px;
+    font-size: 1.4rem;
+    display: inline-flex;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #598bbb;
+    color: #598bbb;
+
+}
+
+.payBill_address_content_ThayDoi{
+    text-decoration: none;
+    color: var(--primary-color);
+    padding-left: 20px;
+
+}
+.payBill_address_content_ThayDoi:hover{
+    color: #598bbb;
+}
+
+.payBill_Product{
+    display: block;
+    margin: 15px 40px;
+    background-color: var(--white-color);
+    width: 94%;
+}
+
+.cartDetail_content4{
+    width: 25%;
+
+}
+.SumPayBill{
+    padding-right: 140px;
+}
+.SumPayBill::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    border: 1px dotted rgba(0, 0, 0, .54);
+}
+
+.payBillend{
+    margin-top: 30px;
+    height: 100%;
+}
+.payBill_address{
+
+}
+
+.payBillendTitle{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    position: relative;
+
+}
+.payBillendTitle::after{
+    content: "";
+    border: 1px dotted rgba(0, 0, 0, .54);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.payBillendTitleName{
+    font-size: 1.8rem;
+
+}
+
+.payBillendTitlePhuongThuc{
+    font-size: 1.4rem;
+
+}
+
+.payBillendTitlePhuongThucName{
+
+}
+
+.payBillendTitlePhuongThuc_ThayDoi{
+    text-decoration: none;
+    color: var(--primary-color);
+    padding-left: 30px;
+
+}
+.payBillendTitlePhuongThuc_ThayDoi:hover{
+    color: #598bbb;
+}
+
+.payBillendContent{
+    display: flex;
+    justify-content: flex-end;
+    padding:15px 20px;
+}
+
+.payBillendContent_tienhang{
+    font-size: 1.6rem;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payBillendContent_tienhang_name{
+    color: rgba(0, 0, 0, .54);
+
+}
+
+.payBillendContent_tienhang_nameSum{
+    color: var(--text-color);
+
+}
+
+.colorBlue{
+    color: #598bbb;
+    font-size: 2rem;
+}
+
+.payBillendContentDatHang{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+
+}
+
+.payBillendContentDatHang::before{
+    content: "";
+    border: 1px dotted rgba(0, 0, 0, .54);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.payBillendContentDatHangName{
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, .54);
+
+}
+
+.payBillendContentDatHangbtn{
+    padding: 20px 50px;
+
+}
+.payBillendContentDatHangbtn:hover{
+    background-color: #598bbb;
+}
+
+.sualoifooter{
+    margin-top: 40px;
+
+}
+/* end pay bill */
+
+/* start lich su don hang */
+.contrains{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+.myorder{
+    display: flex;
+    padding: 1.25rem 0px 3.125rem;
+}
+
+.myorder_Auth{
+    display: block;
+    flex-shrink: 0;
+    width: 180px;
+}
+
+.myorder_Auth_title{
+    border-bottom: 1px solid rgb(239, 239, 239);
+    display: flex;
+    padding: 15px 0px;
+}
+
+.myorder_AuthImg{
+    width: 50px;
+    height: 52px;
+    border-radius: 50%;
+}
+.myorder_AuthName{
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-weight: 500;
+
+    
+}
+.myorder_Auth_Content{
+    cursor: pointer;
+    list-style: none;
+    margin: 27px 0 0;
+    padding: 0;
+}
+
+.myorder_Auth_ContentLabel{
+    padding: 12px 0;
+
+}
+
+.myorder_Auth_ContentLabel_icon{
+    font-size: 1.8rem;
+    color: var(--primary-color);
+
+}
+
+.myorder_Auth_ContentLabel_name{
+    display: inline-flex;
+    align-items: center;
+    padding-left: 5px;
+    font-size: 1.4rem;
+}
+
+.myorder_Content{
+    /* background: #fff; */
+    border-radius: .125rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .13);
+    box-sizing: border-box;
+    flex-grow: 1;
+    margin-left: 1.6875rem;
+    min-width: 0;
+    position: relative;
+    width: 980px;
+}
+
+.myorder_ContentNavabar{
+
+}
+
+.myorder_ContentNavabar_list{
+    list-style: none;
+    display: flex;
+    font-size: 1.6rem;
+    background-color: var(--white-color);
+    height: 50px;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-top: 0;
+
+}
+
+.myorder_ContentNavabar_item{
+    padding-right: 40px;
+
+}
+.myorder_ContentNavabar_item:hover{
+    color: #598bbb;
+}
+
+.myorder_Content_product{
+    background-color: var(--white-color);
+    margin-top: 20px;
+
+}
+.myorder_Content_productShipper{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.4rem;
+    padding: 20px;
+    position: relative;
+
+}
+.myorder_Content_productShipper::after{
+    content: "";
+    position: absolute;
+    border: 1px dotted rgba(0, 0, 0, .54);
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+}
+.myorder_Content_productShipper_status{
+    color: #26aa99;
+    padding-right: 20px;
+
+}
+.myorder_Content_productShippericon{
+
+}
+.myorder_Content_productShipperName{
+    padding-left: 5px;
+
+}
+
+.myorder_Content_productShipper_Commet{
+    color: var(--primary-color);
+
+}
+
+.myorder_Content_productContent{
+    display: flex;
+    padding: 20px;
+
+}
+
+.myorder_Content_productContentDecripsion{
+    width: 85%;
+    display: flex;
+
+}
+
+.myorder_Content_productContent_img{
+    height: 82px;
+    width: 82px;
+
+
+}
+
+.myorder_Content_productContent_decription{
+    padding-left: 10px;
+
+}
+
+.myorder_Content_productContent_title{
+    font-size: 1.6rem;
+
+}
+
+.myorder_Content_productContent_classi{
+    display: block;
+    font-size: 1.4rem;
+    padding: 8px 0;
+    color: rgba(0, 0, 0, .54);
+
+}
+
+.myorder_Content_productContent_quantity{
+
+}
+
+.myorder_Content_productContentPrice{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #598bbb;
+    font-size: 1.4rem;
+
+}
+
+.myorder_Content_productContentPriceNew{
+
+}
+
+.myorder_Content_productPayBill{
+    padding: 20px;
+    position: relative;
+
+}
+.myorder_Content_productPayBill::before{
+    content: "";
+    border: 1px dotted rgba(0, 0, 0, .54);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.myorder_Content_productPayBill_sum{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    background-color: #fffefb;
+
+}
+
+.myorder_Content_productPayBill_name{
+    font-size: 1.4rem;
+
+}
+
+.myorder_Content_productPayBill_price{
+    font-size: 1.8rem;
+    color: #598bbb;
+    font-weight: 500;
+    padding-left: 10px;
+
+}
+
+.myorder_Content_productPayBill_btn{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #fffefb;
+
+}
+.myorder_Content_productPayBill_btnNew{
+    margin-left: 15px;
+}
+
+.myorder_Content_productPayBill_btnNew:hover{
+    background-color: #598bbb;
+}
+
+
+/* end lich su don hang */
+
+/* start my order detail */
+.myorderdetail_prevtitle{
+    justify-content: space-between;
+}
+.myorderdetail_prev{
+
+}
+
+.myorderdetail_previcon{
+
+}
+
+.myorderdetail_prevName{
+    color: rgba(0, 0, 0, .54);
+
+}
+
+
+
+/* end my order detail */
+
+/* Thêm vào file main.css */
+.modal--hidden {
+    display: none;
 }

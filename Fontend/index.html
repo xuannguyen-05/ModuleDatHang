@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Shop Giày Dép</title>
+</head>
+<body>
+    <div class="app">
+        <div id="header-placeholder"></div>
+
+        <div class="app__container">
+            <!-- thết kế phần container theo chuẩn 12 colums -->
+            <div class="grid">
+                <div class="grid__row app__content">
+                    <div class="grid__column-2">
+                        <nav class="category">
+                           <h3 class="category__heading">
+                               <i class="category__heading-icon fa-solid fa-list-ul"></i>
+                               Danh Mục</h3>
+                           <ul class="category-list">
+                               <li class="category-item category-item-active">
+                                   <a href="" class="category-item__link">Giày thể thao</a>
+                               </li>
+                               <li class="category-item">
+                                   <a href="" class="category-item__link">Giày Sandal</a>
+                               </li>
+                               <li class="category-item">
+                                   <a href="" class="category-item__link">Dép nam</a>
+                               </li>
+                           </ul>
+                        </nav>
+                    </div>
+    
+                    <div class="grid__column-10">
+                        <div class="home-filter">
+                            <span class="home-filter__label">Sắp xếp theo</span>
+                            <button class="home-filter-btn btn">Phổ biến</button>
+                            <button class="home-filter-btn btn btn--primary">Mới nhất</button>
+                            <button class="home-filter-btn btn">Bán chạy</button>
+
+                            <div class="select-input">
+                                <span class="select-input__label">Giá</span>
+                                <i class="select-input__icon fa-solid fa-chevron-down"></i>
+
+                                <!-- list options -->
+                                <ul class="select-input__list">
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Giá : Thấp đến cao</a>
+                                    </li>
+
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Giá : Cao đến thấp</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+
+                            <div class="home-filter__page">
+                                <span class="home-filter__page-num">
+                                    <span class="home-filter__page-current">1</span>/14
+                                </span>
+
+                                <div class="home-filter__page-control">
+                                    <a href="" class="home-filter__page-btn">
+                                        <i class="home-filter__page-icon fa-solid fa-chevron-left"></i>
+                                    </a>
+
+                                    <a href="" class="home-filter__page-btn">
+                                        <i class="home-filter__page-icon fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="home-product ">
+                            <!-- grid->grown->colum -->
+                            <!-- Mỗi sản phẩm tương ứng với 2 cột nên dùng .grid__column-2
+                             mà muốn dùng nó phải để nó trong trình tự thẻ grid->grown->colum -->
+                            <div class="grid__row">
+                                <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaydabanh3.jpg);"></div>
+                                             <h4 class="home-product-item__name">GIÀY ĐÁ BÓNG CAO CẤP TN350 SÂN CỎ TỰ NHIÊN MÀU VÀNG</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">450.800đ</span>
+                                                 <span class="home-product-item__price-current">350.900đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">112 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">CR7</span>
+                                                 <span class="home-product-item__origin-name">Trung Quốc</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">10%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp2 -->
+                                <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaydabanh2.jpg);"></div>
+                                             <h4 class="home-product-item__name">Giày bóng đá Nam YSTU013-3V</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">1.625.000đ</span>
+                                                 <span class="home-product-item__price-current">1.325.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">2 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">HongSport</span>
+                                                 <span class="home-product-item__origin-name">Việt Nam</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">21%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp3 -->
+                                 <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaynike.jpg);"></div>
+                                             <h4 class="home-product-item__name">Nike Mercurial Vapor 15 Pro</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">999.000đ</span>
+                                                 <span class="home-product-item__price-current">850.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">10 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">NIKE</span>
+                                                 <span class="home-product-item__origin-name">Mỹ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">10%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp4 -->  
+                                <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">  
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaydabanh4.jpg);"></div>
+                                             <h4 class="home-product-item__name">Giày đá bóng sân cỏ tự nhiên JGBL 204190</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">879.000đ</span>
+                                                 <span class="home-product-item__price-current">550.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">1 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">JOGARBORA</span>
+                                                 <span class="home-product-item__origin-name">Việt Nam</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">24,4%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp5 -->
+                                 <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giayxakho.jpg);"></div>
+                                             <h4 class="home-product-item__name">Giày bóng đá người lớn Giày bóng đá trẻ em Giày bóng đá nam</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">500.000đ</span>
+                                                 <span class="home-product-item__price-current">425.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">1k đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">11FG</span>
+                                                 <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">22%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaydabanh3.jpg);"></div>
+                                             <h4 class="home-product-item__name">GIÀY ĐÁ BÓNG CAO CẤP TN350 SÂN CỎ TỰ NHIÊN MÀU VÀNG</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">450.800đ</span>
+                                                 <span class="home-product-item__price-current">350.900đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">112 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">CR7</span>
+                                                 <span class="home-product-item__origin-name">Trung Quốc</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">10%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp2 -->
+                                <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaydabanh2.jpg);"></div>
+                                             <h4 class="home-product-item__name">Giày bóng đá Nam YSTU013-3V</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">1.625.000đ</span>
+                                                 <span class="home-product-item__price-current">1.325.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">2 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">HongSport</span>
+                                                 <span class="home-product-item__origin-name">Việt Nam</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">21%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp3 -->
+                                 <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaynike.jpg);"></div>
+                                             <h4 class="home-product-item__name">Nike Mercurial Vapor 15 Pro</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">999.000đ</span>
+                                                 <span class="home-product-item__price-current">850.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">10 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">NIKE</span>
+                                                 <span class="home-product-item__origin-name">Mỹ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">10%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp4 -->  
+                                <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">  
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaydabanh4.jpg);"></div>
+                                             <h4 class="home-product-item__name">Giày đá bóng sân cỏ tự nhiên JGBL 204190</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">879.000đ</span>
+                                                 <span class="home-product-item__price-current">550.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">1 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">JOGARBORA</span>
+                                                 <span class="home-product-item__origin-name">Việt Nam</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">24,4%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp5 -->
+                                 <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giayxakho.jpg);"></div>
+                                             <h4 class="home-product-item__name">Giày bóng đá người lớn Giày bóng đá trẻ em Giày bóng đá nam</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">500.000đ</span>
+                                                 <span class="home-product-item__price-current">425.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">1k đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">11FG</span>
+                                                 <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">22%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaydabanh3.jpg);"></div>
+                                             <h4 class="home-product-item__name">GIÀY ĐÁ BÓNG CAO CẤP TN350 SÂN CỎ TỰ NHIÊN MÀU VÀNG</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">450.800đ</span>
+                                                 <span class="home-product-item__price-current">350.900đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">112 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">CR7</span>
+                                                 <span class="home-product-item__origin-name">Trung Quốc</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">10%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp2 -->
+                                <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaydabanh2.jpg);"></div>
+                                             <h4 class="home-product-item__name">Giày bóng đá Nam YSTU013-3V</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">1.625.000đ</span>
+                                                 <span class="home-product-item__price-current">1.325.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">2 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">HongSport</span>
+                                                 <span class="home-product-item__origin-name">Việt Nam</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">21%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp3 -->
+                                 <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaynike.jpg);"></div>
+                                             <h4 class="home-product-item__name">Nike Mercurial Vapor 15 Pro</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">999.000đ</span>
+                                                 <span class="home-product-item__price-current">850.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">10 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">NIKE</span>
+                                                 <span class="home-product-item__origin-name">Mỹ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">10%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp4 -->  
+                                <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">  
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giaydabanh4.jpg);"></div>
+                                             <h4 class="home-product-item__name">Giày đá bóng sân cỏ tự nhiên JGBL 204190</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">879.000đ</span>
+                                                 <span class="home-product-item__price-current">550.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                     <i class="fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">1 đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">JOGARBORA</span>
+                                                 <span class="home-product-item__origin-name">Việt Nam</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">24,4%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                <!-- sp5 -->
+                                 <div class="grid__column-2-4">
+                                    <!-- product item -->
+                                     <a href="product-detail.html" class="home-product-item-link">
+                                         <div class="home-product-item">
+                                             <!-- dùng thẻ dĩ để chứa hình ảnh khi sử dụng background image tì phải dùng ulr
+                                              sau này bacnkend sẽ đổ giá trị lấy hình ảnh sane phẩm vào style inline để hiển thị hình ảnh sản phẩm
+                                              và dễ dàng chỉnh kích thước ảnh dù ảnh có lớn hay nhỏ -->
+                                             <div class="home-product-item__img" style="background-image: url(./assets/img/giayxakho.jpg);"></div>
+                                             <h4 class="home-product-item__name">Giày bóng đá người lớn Giày bóng đá trẻ em Giày bóng đá nam</h4>
+     
+                                             <div class="home-product-item__price">
+                                                 <span class="home-product-item__price-old">500.000đ</span>
+                                                 <span class="home-product-item__price-current">425.000đ</span>
+                                             </div>
+     
+                                             <div class="home-product-item__action">
+                                                 <span class="home-product-item__like home-product-item__like--liked">
+                                                     <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                     <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                 </span>
+     
+                                                 <div class="home-product-item__rating">
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                     <i class="home-product-item__start-gold fa-solid fa-star"></i>
+                                                 </div>
+                                                 <span class="home-product-item__sold">1k đã bán</span>
+                                 
+                                             </div>
+     
+                                             <div class="home-product-item__origin">
+                                                 <span class="home-product-item__brand">11FG</span>
+                                                 <span class="home-product-item__origin-name">Hàn Quốc</span>
+                                             </div>
+     
+                                             <div class="home-product-item__favourite">
+                                                 <i class="fa-solid fa-check"></i>
+                                                 <span>Yêu Thích</span> 
+                                             </div>
+     
+                                             <div class="home-product-item__sale-off">
+                                                 <span class="home-product-item__sale-off-percent">22%</span>
+                                                 <span class="home-product-item__sale-off-label">GIẢM</span>
+     
+                                             </div>
+     
+                                         </div>
+                                     </a>
+                                </div>
+
+                                
+                                
+                            </div>
+                        </div>
+
+                        <!-- làm phần phân trang -->
+                        <ul class="panigation home-product__panigation">
+                            <li class="panigation-item">
+                                <a href="" class="panigation-item__link">
+                                    <i class="panigation-item__icon fa-solid fa-angle-left"></i>
+                                </a>
+                            </li>
+
+                             <li class="panigation-item panigation-item__active">
+                                <a href="" class="panigation-item__link">1</a>
+                            </li>
+
+                            <li class="panigation-item">
+                                <a href="" class="panigation-item__link">2</a>
+                            </li>
+
+                            <li class="panigation-item">
+                                <a href="" class="panigation-item__link">3</a>
+                            </li>
+
+                            <li class="panigation-item">
+                                <a href="" class="panigation-item__link">4</a>
+                            </li>
+
+                            <li class="panigation-item">
+                                <a href="" class="panigation-item__link">5</a>
+                            </li>
+
+                            <li class="panigation-item">
+                                <a href="" class="panigation-item__link">...</a>
+                            </li>
+
+                            <li class="panigation-item">
+                                <a href="" class="panigation-item__link">14</a>
+                            </li>
+
+                            <li class="panigation-item">
+                                <a href="" class="panigation-item__link">
+                                    <i class="panigation-item__icon fa-solid fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                </div>
+            </div>
+
+        </div>
+
+        <div id="footer-placeholder"></div>
+    </div>
+
+    <div id="auth-modal" class="modal modal--hidden">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            
+            <form id="register-form" class="auth-form" method="post">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng Kí</h3>
+                        <span id="goto-login-btn" class="auth-form__switch-btn">Đăng Nhập</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input id="register-fullname" type="text" class="auth-form__input" placeholder="Họ và tên của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input id="register-email" type="email" class="auth-form__input" placeholder="Email của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input id="register-username" type="text" class="auth-form__input" placeholder="Tên đăng nhập của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input id="register-password" type="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                        </div>
+                        <div class="auth-form__group">
+                            <input id="register-password-confirm" type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                        </div>
+                    </div>
+
+                    <div id="register-error-message" style="color: red; margin: 0 12px 10px;"></div>
+
+                    <div class="auth-form__aside">
+                        </div>
+
+                    <div class="auth-form__controls">
+                        <button id="register-close-btn" class="btn auth-form__controls-back btn--normal">TRỞ LẠI</button>
+                        <button id="register-submit-btn" class="btn btn--primary">ĐĂNG KÍ</button>
+                    </div>
+                </div>
+            </form>
+
+            <form id="login-form" class="auth-form" method="post" style="display: none;">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng Nhập</h3>
+                        <span id="goto-register-btn" class="auth-form__switch-btn">Đăng Ký</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input id="login-username" type="text" class="auth-form__input" placeholder="Tên đăng nhập của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input id="login-password" type="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                        </div>
+                    </div>
+                    
+                    <div id="login-error-message" style="color: red; margin: 0 12px 10px;"></div>
+
+                    <div class="auth-form__aside">
+                        </div>
+
+                    <div class="auth-form__controls">
+                        <button id="login-close-btn" class="btn auth-form__controls-back btn--normal">TRỞ LẠI</button>
+                        <button id="login-submit-btn" class="btn btn--primary">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <script src="assets/js/layout-loader.js"></script>
+    <script src="assets/js/auth.js"></script>
+
+</body>
+
+</html>
