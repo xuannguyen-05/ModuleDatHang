@@ -7,40 +7,53 @@ use Illuminate\Http\Request;
 use App\Models\User; // Thêm Model User
 use App\Models\Role; // Thêm Model Role
 use Illuminate\Support\Facades\Hash; // Thêm Hash
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
     // === HÀM ĐĂNG KÝ (REGISTER) ===
-    public function register(Request $request)
+   public function register(Request $request)
     {
-        // 1. Kiểm tra dữ liệu
-        $request->validate([
-            'Username' => 'required|string|unique:Users,Username',
-            'Email' => 'required|string|email|unique:Users,Email',
-            'PasswordHash' => 'required|string|min:6',
-            'FullName' => 'required|string',
+        // 1. SỬA LỖI: Validate TẤT CẢ các trường mà API yêu cầu
+        // Key "fullName" (N hoa) phải khớp với JavaScript
+        $validator = Validator::make($request->all(), [
+            'fullName' => 'required|string|max:255', // <-- Key là 'fullName'
+            'email'    => 'required|string|email|max:255|unique:users',
+            'username' => 'required|string|max:255|unique:users',
+            'password' => ['required', 'confirmed', Password::min(8)], // 'confirmed' tự động check 'password_confirmation'
         ]);
 
-        // 2. Tìm Role 'Customer'
-        $customerRole = Role::where('RoleName', 'Customer')->first();
-        if (!$customerRole) {
-            // Nếu chưa có Role Customer trong DB, báo lỗi
-            return response()->json(['message' => 'Lỗi hệ thống: Không tìm thấy vai trò Customer.'], 500);
+        if ($validator->fails()) {
+            // Trả về lỗi 422 để JavaScript (hàm handleApiResponse) bắt được
+            return response()->json([
+                'message' => 'Dữ liệu không hợp lệ.',
+                'errors' => $validator->errors()
+            ], 422); 
         }
 
-        // 3. Tạo User
-        $user = User::create([
-            'Username' => $request->Username,
-            'Email' => $request->Email,
-            'FullName' => $request->FullName,
-            'PasswordHash' => Hash::make($request->PasswordHash), // MÃ HÓA MẬT KHẨU
-        ]);
+        // 2. SỬA LỖI: Tạo User với đúng các trường
+        try {
+            $user = User::create([
+                'fullName' => $request->fullName, // <-- Key là 'fullName'
+                'email'    => $request->email,
+                'username' => $request->username,
+                'password' => Hash::make($request->password),
+                // 'role' => 'Customer' // (Tùy chọn, nếu bạn có cột 'role')
+            ]);
 
-        // 4. Gán vai trò 'Customer' cho user mới
-        $user->roles()->attach($customerRole->RoleID);
+            // 3. Trả về phản hồi thành công
+            return response()->json([
+                'message' => 'Đăng ký thành công'
+            ], 201); // 201 Created
 
-        return response()->json(['message' => 'Đăng ký thành công'], 201);
+        } catch (\Exception $e) {
+            // Xử lý nếu có lỗi database
+            return response()->json([
+                'message' => 'Không thể tạo tài khoản. Vui lòng thử lại.'
+            ], 500);
+        }
     }
 
     // === HÀM ĐĂNG NHẬP (LOGIN) ===
