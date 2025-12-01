@@ -85,7 +85,7 @@
 
             </form> 
 
-             # login form  
+             {{-- # login form   --}}
 
             {{-- <div class="auth-form">
                 <div class="auth-form__container">    #lớP chứa các thành phần riêng  
