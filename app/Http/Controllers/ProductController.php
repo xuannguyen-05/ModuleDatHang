@@ -9,43 +9,58 @@ use App\Models\ProductVariant;
 
 class ProductController extends Controller
 {
+    // HIỂN THỊ TRANG CHỦ (Tất cả sản phẩm)
     public function index()
     {
         $categories = Category::all();
-        $variants = ProductVariant::with('product')->paginate(100);
+        
+        // Lấy sản phẩm, kèm theo biến thể giá thấp nhất để hiển thị
+        $products = Product::with('minPriceVariant')
+                           ->latest()
+                           ->paginate(100);
+                           
         $category = null;
 
-        return view('Home.index', compact('categories', 'variants', 'category'));
+        // Trả về biến $products
+        return view('Home.index', compact('categories', 'products', 'category'));
     }
 
+    // HIỂN THỊ CHI TIẾT SẢN PHẨM
     public function productDetail(string $id)
     {
-        $currentVariant = ProductVariant::findOrFail($id);
-        $product = $currentVariant->product;
+        
+        $product = Product::with('variants')->findOrFail($id);
+        $currentVariant = $product->variants->first();
+
+        if (!$currentVariant) {
+             return redirect()->back()->with('error', 'Sản phẩm đang cập nhật.');
+        }
+
         $allVariants = $product->variants;
         $uniqueColors = $allVariants->pluck('color')->unique();
-        $availableSizes = [37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
+        
+        // Lấy danh sách size thực tế có trong kho
+        $availableSizes = $allVariants->pluck('size')->unique()->sort()->values()->toArray();
 
         $categories = Category::all();
 
         return view('Product.productDetail', compact(
-            'currentVariant', 
-            'product', 
-            'allVariants', 
-            'uniqueColors', 
-            'availableSizes', 
+            'currentVariant',
+            'product',
+            'allVariants',
+            'uniqueColors',
+            'availableSizes',
             'categories'
         ));
     }
 
-    //hiển thị sản phẩm theo danh mục
+    // HIỂN THỊ SẢN PHẨM THEO DANH MỤC
     public function show(string $id)
     {
         $categories = Category::all();
         $category = Category::findOrFail($id);
-        $productIds = Product::where('category_id', $id)->pluck('product_id');
-        $variants = ProductVariant::whereIn('product_id', $productIds)->with('product')->paginate(100);
+        $products = Product::where('category_id', $id)->with('minPriceVariant')->latest()->paginate(12);
 
-        return view('Home.index', compact('categories', 'category', 'variants'));
+        return view('Home.index', compact('categories', 'products', 'category'));
     }
 }

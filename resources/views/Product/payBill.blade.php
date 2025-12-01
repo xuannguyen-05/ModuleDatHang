@@ -18,12 +18,15 @@
             <div class="payBill_address_content">
                 <span class="payBill_address_contentName">{{ $user->fullname ?? $user->name }}</span>
                 <span class="payBill_address_contentPhone">( {{ $user->phone ?? 'Chưa có SĐT' }} ) </span>
-                <span class="payBill_address_contentAddress">{{ $user->address ?? 'Chưa có địa chỉ' }}</span>
-                
-                <input type="hidden" name="shipping_address" value="{{ $user->address ?? 'Chưa có địa chỉ' }}">
+                <span class="payBill_address_contentAddress" style="{{ empty($user->address) ? 'color: red;' : '' }}">
+                    {{ $user->address ?? 'Chưa có địa chỉ' }}
+                </span>
+                <input type="hidden" name="shipping_address" value="{{ $user->address }}">
 
                 <span class="payBill_address_contentbutton">Mặc Định</span>
-                <a href="{{route('address.edit')}}" class="payBill_address_content_ThayDoi">Thay Đổi</a> {{-- (Bạn sẽ cần tạo trang thay đổi địa chỉ sau) --}}
+                <a href="{{ route('address.edit') }}" class="payBill_address_content_ThayDoi">
+                    {{ empty($user->address) ? 'Thêm Địa Chỉ' : 'Thay Đổi' }}
+                </a>
             </div>
         </div>
 
@@ -32,7 +35,7 @@
                 <div class="cartDetailProduct">
                     <span class="cartDetailProduct1">Sản Phẩm</span>
                 </div>
-                
+
                 <div class="cartDetail_content">
                     <span class="cartDetail_content4"></span>
                     <span class="cartDetail_content4">Đơn Giá</span>
@@ -41,9 +44,9 @@
                 </div>
             </div>
 
-            @if($cart && $cart->details->isNotEmpty())
-                @foreach($cart->details as $detail)
-                    @if($detail->variant && $detail->variant->product)
+            @if ($cart && $cart->details->isNotEmpty())
+                @foreach ($cart->details as $detail)
+                    @if ($detail->variant && $detail->variant->product)
                         @php
                             $imgPath = $detail->variant->img_ulr;
                             if (str_starts_with($imgPath, './')) {
@@ -54,22 +57,27 @@
                         @endphp
                         <div class="cartDetail">
                             <div class="cartDetailProduct">
-                                <div class="cartDetailProduct_img" style="background-image: url({{ asset($imgPath) }});"></div>
+                                <div class="cartDetailProduct_img" style="background-image: url({{ asset($imgPath) }});">
+                                </div>
                                 <span class="cartDetailProductName">{{ $detail->variant->product->productname }}</span>
                             </div>
                             <div class="cartDetail_content">
                                 <div class="cartDetail_content4 cartDetail_PhanLoai">
                                     <span class="cartDetail_PhanLoaiName">Phân Loại :</span>
-                                    <span class="cartDetail_PhanLoaiMota">{{ $detail->variant->color }}, {{ $detail->size }}</span>
+                                    <span class="cartDetail_PhanLoaiMota">{{ $detail->variant->color }},
+                                        {{ $detail->size }}</span>
                                 </div>
-                        
-                                <div class="cartDetail_content4 cartDetail_price">{{ number_format($detail->unitprice) }}đ</div>
-                        
+
+                                <div class="cartDetail_content4 cartDetail_price">{{ number_format($detail->unitprice) }}đ
+                                </div>
+
                                 <div class="cartDetail_content4 cartDetail_quantity">
-                                    <span class="productDeatil_QuantityInt" style="font-size: 1.4rem;">{{ $detail->quantity }}</span>
+                                    <span class="productDeatil_QuantityInt"
+                                        style="font-size: 1.4rem;">{{ $detail->quantity }}</span>
                                 </div>
-                        
-                                <div class="cartDetail_content4 cartDetail_sumprice">{{ number_format($detail->unitprice * $detail->quantity) }}đ</div>
+
+                                <div class="cartDetail_content4 cartDetail_sumprice">
+                                    {{ number_format($detail->unitprice * $detail->quantity) }}đ</div>
                             </div>
                         </div>
                     @endif
@@ -78,7 +86,8 @@
 
             <div class="cartDetailend SumPayBill">
                 <div class="cartDetailend_MuaHang">
-                    <span class="cartDetailend_MuaHang_quantity">Tổng Số Tiền ({{ $cart->details->sum('quantity') }} Sản Phẩm):</span>
+                    <span class="cartDetailend_MuaHang_quantity">Tổng Số Tiền ({{ $cart->details->sum('quantity') }} Sản
+                        Phẩm):</span>
                     <span class="cartDetailend_MuaHangPrice">{{ number_format($total) }}đ</span>
                 </div>
             </div>
@@ -93,9 +102,9 @@
                     <a href="#" class="payBillendTitlePhuongThuc_ThayDoi">THAY ĐỔI</a>
                 </div>
             </div>
-            
+
             @php
-                $shippingFee = 40000; 
+                $shippingFee = 40000;
                 $finalTotal = $total + $shippingFee;
             @endphp
 
@@ -123,12 +132,23 @@
             </div>
 
             <div class="payBillendContentDatHang">
-                <span class="payBillendContentDatHangName">Nhấn "Đặt Hàng" đồng nghĩa với việc bạn đồng ý tuân theo điều khoản của shop</span>
-                <button type="submit" class="payBillendContentDatHangbtn btn btn--primary">Đặt Hàng</button>
+                <span class="payBillendContentDatHangName">Nhấn "Đặt Hàng" đồng nghĩa với việc bạn đồng ý tuân theo điều
+                    khoản của shop</span>
+                @if (!empty($user->address))
+                    <button type="submit" class="payBillendContentDatHangbtn btn btn--primary">Đặt Hàng</button>
+                @else
+                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+                        <span style="color: red; font-weight: bold;">Vui lòng thêm địa chỉ nhận hàng để tiếp tục</span>
+                        <a href="{{ route('address.edit') }}" class="btn btn--primary"
+                            style="background-color: #999; border-color: #999; min-width: 180px; text-align: center; text-decoration: none; line-height: 36px;">
+                            Thêm địa chỉ
+                        </a>
+                    </div>
+                @endif
             </div>
         </div>
 
-    </form> {{-- SỬA 10: Đóng thẻ form --}}
+    </form> 
 
     <div class="sualoifooter">
         '

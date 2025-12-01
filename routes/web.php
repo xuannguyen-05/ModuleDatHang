@@ -56,4 +56,3 @@ Route::middleware(['auth', 'kiemTraManager'])->prefix('manager')->name('manager.
     Route::get('/orders', [ManagerController::class, 'listOrders'])->name('orders.index');
     Route::patch('/orders/{id}/update', [ManagerController::class, 'updateOrderStatus'])->name('orders.updateStatus');
 });
-

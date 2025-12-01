@@ -32,6 +32,10 @@ class Product extends Model
         //một Product có nhiều ProductVariant
         return $this->hasMany(ProductVariant::class, 'product_id', 'product_id');
     }
+    public function minPriceVariant()
+    {
+        return $this->hasOne(ProductVariant::class, 'product_id')->orderBy('price', 'asc');
+    }
 
     public function createdBy()
     {

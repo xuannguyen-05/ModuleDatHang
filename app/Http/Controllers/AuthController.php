@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PostRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use App\Models\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -19,11 +20,18 @@ class AuthController extends Controller
     }
 
     public function posrtRegister(RegisterRequest $register){
-        User::create([
+        $user= User::create([
             'name'=>$register->get('name'),
             'email'=>$register->get('email'),
             'password'=>Hash::make($register->get('password'))
         ]);
+
+        UserRole::create([
+            'user_id'=>$user->id,
+            'role_id'=>3
+        ]);
+
+        Auth::login($user);
 
         return redirect()->route('index')->with('message','Đăng kí thành công! ');
     }
@@ -48,7 +56,6 @@ class AuthController extends Controller
             $user = Auth::user();
 
             // 2. Kiểm tra vai trò (rolename)
-            // (Đảm bảo Model User của bạn đã có hàm roles() như bước trước)
             if ($user->roles()->where('rolename', 'manager')->exists()) {
                 
                 // 3. Nếu là Admin -> Chuyển đến trang duyệt đơn

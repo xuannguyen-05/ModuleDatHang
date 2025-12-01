@@ -2219,3 +2219,8 @@ i.home-product-item__like-icon-fill {
 
 
 /* end my order detail */
+.btn--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #ccc !important;
+}
